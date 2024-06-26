@@ -41,6 +41,7 @@ header{
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
+   
 }
 
 #logo-header{
@@ -54,14 +55,14 @@ header{
 }
 
 .nav-li-selected{
-    border-top: solid #0065FC 2px;
+    border-top: solid #F9B105 2px;
     padding: 30px;
-    color: #0065FC;
+    color: #F9B105;
 }
 
 .nav-li-selected:hover{
     cursor: pointer;
-    border-top: solid #0065FC 2px;
+    border-top: solid #F9B105 2px;
 }
 
 .nav-li-not-selected{
@@ -70,8 +71,8 @@ header{
 }
 
 .nav-li-not-selected:hover{
-        color: #0065FC;
-        border-top: solid #0065FC 2px;
+        color: #F9B105;
+        border-top: solid #F9B105 2px;
 
 }
 

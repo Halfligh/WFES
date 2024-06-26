@@ -1,351 +1,110 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="be">
   <head>
-    <title>WF Electric Solutions</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <script src="https://kit.fontawesome.com/4f888eba30.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
+    <!-- header-->
     <header>
-      <img src="./images/logo/WFES.png" alt="logoWFES" id="logo-header" />
-      <nav class="navbar">
-        <ul class="nav-ul">
-          <li class="nav-responsive">
-            <div class="nav-div">
-              <a class="nav-li-selected" href="#hebergements-marseille">Notre expertise</a>
-            </div>
-          </li>
-          <li class="nav-responsive">
-            <div class="nav-div">
-              <a class="nav-li-not-selected" href="#activity-wrap">Nous contacter</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <a href="">Home</a>
+      <a href="">Contact</a>
+      <a href="">Infos</a>
     </header>
 
-    <main>
-      <div class="search-panel">
-        <h1 class="main-tag">Le slogan de WF Electric Solution</h1>
-        <span class="accessory-tag">Votre secteur d'activités - Localisation</span>
-        <div class="top-div">
-          <img src="./images/logo/Panneaux.jpg" alt="tools 3D" class="top-img" />
-        </div>
-
-        <div class="filter-view">
-          <p class="filter-title">Nos spécialités</p>
-          <div class="filter-list">
-            <div class="filter-div">
-              <i class="fa-solid fa-file-invoice-dollar"></i>
-              <p class="filter-item">Étude et devis</p>
-            </div>
-
-            <div class="filter-div">
-              <i class="fa-solid fa-tools"></i>
-              <p class="filter-item">Installation mise en service</p>
-            </div>
-
-            <div class="filter-div">
-              <i class="fa-solid fa-wrench"></i>
-              <p class="filter-item">Maintenance</p>
-            </div>
-
-            <div class="filter-div">
-              <i class="fa-solid fa-shield-alt"></i>
-              <p class="filter-item">Mise en conformité</p>
+    <!--carousel-->
+    <div class="carousel">
+      <!-- list items -->
+      <div class="list">
+        <div class="item">
+          <img src="images/1.jpg" />
+          <div class="content">
+            <div class="author">Sébastien</div>
+            <div class="title">Titre</div>
+            <div class="topic">Topic</div>
+            <div class="des">Description</div>
+            <div class="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
             </div>
           </div>
         </div>
-
-        <div class="info-div">
-          <div class="info-circle">
-            <i class="fa-solid fa-info"></i>
+        <div class="item">
+          <img src="images/2.jpg" />
+          <div class="content">
+            <div class="author">Autheur 2</div>
+            <div class="title">TItre 2</div>
+            <div class="topic">Topic 2</div>
+            <div class="des">Description 2</div>
+            <div class="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
+            </div>
           </div>
-          <p>Mettre ici un texte d'accroche qui présente et donne de la crédibilité</p>
+        </div>
+        <div class="item">
+          <img src="images/3.jpg" />
+          <div class="content">
+            <div class="author">autheur 3</div>
+            <div class="title">Titre 3</div>
+            <div class="topic">Topic 3</div>
+            <div class="des">Description 3</div>
+            <div class="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/4.jpg" />
+          <div class="content">
+            <div class="author">Autheur 4</div>
+            <div class="title">TItre 4</div>
+            <div class="topic">Topic 4</div>
+            <div class="des">Description 4</div>
+            <div class="buttons">
+              <button>SEE MORE</button>
+              <button>SUBSCRIBE</button>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div id="activity-wrap">
-        <h2 class="activity-title">Nos services</h2>
-
-        <ul class="activity-ul">
-          <li class="activity-list">
-            <a href="#">
-              <img
-                src="./images/activites/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg"
-                alt="Vieux-port"
-                class="activity-image"
-              />
-              <h4 class="activity-location">Étude et devis</h4>
-            </a>
-          </li>
-          <li class="activity-list">
-            <a href="#">
-              <img
-                src="./images/activites/paul-hermann-QFTrLdQIRhI-unsplash.jpg"
-                alt="Vieux-port"
-                class="activity-image"
-              />
-              <h4 class="activity-location">Installation et mise en service</h4>
-            </a>
-          </li>
-          <li class="activity-list">
-            <a href="#">
-              <img
-                src="./images/activites/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg"
-                alt="Vieux-port"
-                class="activity-image"
-              />
-              <h4 class="activity-location">Maintenance</h4>
-            </a>
-          </li>
-          <li class="activity-list">
-            <a href="#">
-              <img
-                src="./images/activites/florian-wehde-xW9e8gdotxI-unsplash.jpg"
-                alt="Notre-Dame-de-la-Garde"
-                class="activity-image"
-              />
-              <h4 class="activity-location">Mise en conformité</h4>
-            </a>
-          </li>
-        </ul>
+    <!-- thumbnail -->
+    <div class="thumbnail">
+      <div class="item">
+        <img src="images/1.jpg" alt="photo1" />
+        <div class="content">
+          <div class="title">Name slider</div>
+          <div class="des">Description</div>
+        </div>
       </div>
-
-      <div class="hebergement-global">
-        <section id="hebergements-marseille">
-          <h2 class="hebergement-category">Ils nous ont fait confiance</h2>
-          <div class="hebergements-wrapper">
-            <a class="hebergement-div" href="#">
-              <img
-                src="./images/hebergements/marcus-loke-WQJvWU_HZFo-unsplash.jpg"
-                alt="aubergeCannebière"
-                class="hebergement-image"
-              />
-              <div class="hebergement-div-infos">
-                <h4 class="hebergement-title">Auberge de la cannebière</h4>
-                <p class="price-label">Installation et mise en service</p>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-
-            <a class="hebergement-div" href="#">
-              <img
-                src="./images/hebergements/fred-kleber-gTbaxaVLvsg-unsplash.jpg"
-                alt="hotel-du-port"
-                class="hebergement-image"
-              />
-              <div class="hebergement-div-infos">
-                <h4 class="hebergement-title">Hôtel du port</h4>
-                <p class="price-label">Nuit à partir de 52 <strong>€</strong></p>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-
-            <a class="hebergement-div" href="#">
-              <img
-                src="./images/hebergements/reisetopia-B8WIgxA_PFU-unsplash.jpg"
-                alt="hotel-les-mouettes"
-                class="hebergement-image"
-              />
-              <div class="hebergement-div-infos">
-                <h4 class="hebergement-title">Hôtel les mouettes</h4>
-                <p class="price-label">Nuit à partir de 76 <strong>€</strong></p>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-
-            <a class="hebergement-div" href="#">
-              <img
-                src="./images/hebergements/annie-spratt-Eg1qcIitAuA-unsplash.jpg"
-                alt="hotel-de-la-mer"
-                class="hebergement-image"
-              />
-              <div class="hebergement-div-infos">
-                <h4 class="hebergement-title">Hôtel de la mer</h4>
-                <p class="price-label">Nuit à partir de 46 <strong>€</strong></p>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-
-            <a class="hebergement-div" href="#">
-              <img
-                src="./images/hebergements/nicate-lee-kT-ZyaiwBe0-unsplash.jpg"
-                alt="auberge-le-panier"
-                class="hebergement-image"
-              />
-              <div class="hebergement-div-infos">
-                <h4 class="hebergement-title">Auberge le panier</h4>
-                <p class="price-label">Nuit à partir de 23 <strong>€</strong></p>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-
-            <a class="hebergement-div" href="#">
-              <img
-                src="./images/hebergements/febrian-zakaria-M6S1WvfW68A-unsplash.jpg"
-                alt="hotel-chez-amina"
-                class="hebergement-image"
-              />
-              <div class="hebergement-div-infos">
-                <h4 class="hebergement-title">Hôtel chez Amina</h4>
-                <p class="price-label">Nuit à partir de 96 <strong>€</strong></p>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-          </div>
-          <a class="afficher-plus" href="#">Afficher plus</a>
-        </section>
-
-        <section class="hebergements-popular">
-          <div class="popular-header">
-            <h2 class="hebergement-category">Nous contacter</h2>
-            <i class="fa-solid fa-chart-line" id="popular-chart"></i>
-          </div>
-          <div class="popular-wrapper">
-            <a class="popular-div" href="#">
-              <img
-                src="./images/hebergements/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg"
-                alt="hôtel-soleil-du-matin"
-                class="popular-image"
-              />
-              <div class="popular-div-infos">
-                <div class="top-infos">
-                  <h4 class="hebergement-title">Hôtel Le soleil du matin</h4>
-                  <p class="price-label">Nuit à partir de 128 <strong>€</strong></p>
-                </div>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-
-            <a class="popular-div" href="#">
-              <img
-                src="./images/hebergements/aw-creative-VGs8z60yT2c-unsplash.jpg"
-                alt="Chambre-hôtes-au-coeur-de-l-eau"
-                class="popular-image"
-              />
-              <div class="popular-div-infos">
-                <div class="top-infos">
-                  <h4 class="hebergement-title">Chambre d'hôtes Au coeur de l'eau</h4>
-                  <p class="price-label">Nuit à partir de 71 <strong>€</strong></p>
-                </div>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-
-            <a class="popular-div" href="#">
-              <img
-                src="./images/hebergements/febrian-zakaria-sjvU0THccQA-unsplash.jpg"
-                alt="Hotel-bleu-et-blanc"
-                class="popular-image"
-              />
-              <div class="popular-div-infos">
-                <div class="top-infos">
-                  <h4 class="hebergement-title">Hôtel Bleu et Blanc</h4>
-                  <p class="price-label">Nuit à partir de 68 <strong>€</strong></p>
-                </div>
-                <div class="star-line">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star grey-star"></i>
-                </div>
-              </div>
-            </a>
-          </div>
-        </section>
+      <div class="item">
+        <img src="images/2.jpg" alt="photo2" />
+        <div class="content">
+          <div class="title">Name slider</div>
+          <div class="des">Description</div>
+        </div>
       </div>
-    </main>
+      <div class="item">
+        <img src="images/3.jpg" alt="photo3" />
+        <div class="content">
+          <div class="title">Name slider</div>
+          <div class="des">Description</div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/4.jpg" alt="photo4" />
+        <div class="content">
+          <div class="title">Name slider</div>
+          <div class="des">Description</div>
+        </div>
+      </div>
+    </div>
 
-    <footer>
-      <div class="footer-col">
-        <h3 class="footer-title">À propos</h3>
-        <ul class="footer-ul">
-          <li>
-            <a href="#">Fonctionnement du site</a>
-          </li>
-          <li>
-            <a href="#">Conditions générales</a>
-          </li>
-          <li>
-            <a href="#">Données et confidentialité</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3 class="footer-title">Nos services</h3>
-        <ul class="footer-ul">
-          <li>
-            <a href="#">Charte qualité</a>
-          </li>
-          <li>
-            <a href="#">Devenir partenaire</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3 class="footer-title">Assistance</h3>
-        <ul class="footer-ul">
-          <li>
-            <a href="#">Centre d'aide</a>
-          </li>
-          <li>
-            <a href="#">Nous contacter</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    <script src="app.js"></script>
   </body>
 </html>
