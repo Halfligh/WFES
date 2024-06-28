@@ -7,6 +7,8 @@ let SliderDom = carouselDom.querySelector(".carousel .list");
 let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
 let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
 let timeDom = document.querySelector(".carousel .time");
+let overlayDom = document.getElementById("overlay");
+let closeOverlayDom = document.getElementById("closeOverlay");
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
@@ -69,3 +71,22 @@ function resetAutoSlideTimer() {
     }, timeAutoNext);
   }
 }
+
+// Function to fade in the overlay and change z-index
+function fadeInOverlay() {
+  overlayDom.classList.add("show");
+}
+
+// Function to fade out the overlay and reset z-index
+function fadeOutOverlay() {
+  overlayDom.classList.remove("show");
+}
+
+// Add event listeners to the contact buttons
+let contactButtons = document.getElementsByClassName("contactButton");
+for (let i = 0; i < contactButtons.length; i++) {
+  contactButtons[i].addEventListener("click", fadeInOverlay);
+}
+
+// Add event listener to the close button
+closeOverlayDom.addEventListener("click", fadeOutOverlay);

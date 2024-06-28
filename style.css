@@ -19,10 +19,45 @@ header{
     position: relative;
     z-index: 100;
 }
-header a{
+
+nav{
+display: flex;
+cursor: pointer;
+}
+
+.nav-link{
     color: #eee;
     margin-right: 40px;
 }
+/* Styles pour l'overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 0;
+    transition: opacity 1s ease; /* Transition de l'opacité */
+    z-index: -1; /* Initialement derrière tous les autres éléments */
+}
+
+.overlay.show {
+    z-index: 999; /* Amène l'overlay au-dessus des autres éléments */
+    opacity: 1; /* Rendre l'overlay visible */
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Styles pour le bouton de fermeture */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
 /* carousel */
 .carousel{
     height: 100vh;
@@ -41,6 +76,7 @@ header a{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 1s ease; /* Transition douce pour l'opacité */
 }
 .carousel .list .item .content{
     position: absolute;
@@ -78,6 +114,13 @@ header a{
     padding: 10px; /* Espacement interne pour éviter que le texte touche les bords du fond */
     border-radius: 10px; /* Bordures arrondies pour un meilleur aspect visuel */
     display: inline-block; /* Assure que le fond ne prenne que l'espace nécessaire */
+    font-weight: 300;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transition douce pour le fond et la couleur du texte */
+}
+
+.carousel .list .item .des:hover {
+    background-color:#eee;; /* Couleur de fond complètement opaque */
+    color: #000; /* Couleur du texte noir */
 }
 
 
