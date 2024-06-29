@@ -9,6 +9,7 @@ let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
 let timeDom = document.querySelector(".carousel .time");
 let overlayDom = document.getElementById("overlay");
 let closeOverlayDom = document.getElementById("closeOverlay");
+let navLinks = document.querySelectorAll(".nav-link"); // Sélectionner toutes les nav-links
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
@@ -75,11 +76,13 @@ function resetAutoSlideTimer() {
 // Function to fade in the overlay and change z-index
 function fadeInOverlay() {
   overlayDom.classList.add("show");
+  navLinks.forEach((link) => link.classList.add("black-font"));
 }
 
 // Function to fade out the overlay and reset z-index
 function fadeOutOverlay() {
   overlayDom.classList.remove("show");
+  navLinks.forEach((link) => link.classList.remove("black-font"));
 }
 
 // Add event listeners to the contact buttons
