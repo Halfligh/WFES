@@ -9,6 +9,7 @@ let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
 let timeDom = document.querySelector(".carousel .time");
 let overlayDom = document.getElementById("overlay");
 let closeOverlayDom = document.getElementById("closeOverlay");
+let backSolutionsDom = document.getElementById("backSolutions");
 let navLinks = document.querySelectorAll(".nav-link"); // Sélectionner toutes les nav-links
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
@@ -93,3 +94,4 @@ for (let i = 0; i < contactButtons.length; i++) {
 
 // Add event listener to the close button
 closeOverlayDom.addEventListener("click", fadeOutOverlay);
+backSolutionsDom.addEventListener("click", fadeOutOverlay);

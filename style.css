@@ -13,7 +13,7 @@ header{
     width: 1140px;
     max-width: 80%;
     margin: auto;
-    height: 50px;
+    height: 80px;
     display: flex;
     align-items: center;
     position: relative;
@@ -30,7 +30,6 @@ align-items: center;
 .nav-link{
     margin-right: 40px;
     transition: color 1s ease; /* Transition de l'opacité */
-    min-width: 120px;
     text-shadow: 0 5px 10px #0004;
     font-weight: 300;
     font-size: 1.2em;
@@ -57,18 +56,16 @@ align-items: center;
 .contact-infos{
     color:black;
     position: absolute;
-    top: 20%;
+    top: 30%;
     width: 1140px;
     max-width: 80%;
     left: 50%;
     transform: translateX(-50%);
     padding-right: 30%;
     box-sizing: border-box;
-    text-shadow: 0 5px 10px #0004;
-    font-weight: bold;
+    font-weight: 500;
     letter-spacing: 10px;
     font-size: 5em;
-    line-height: 1.3em; 
 }
 
 .contact-logos{
@@ -80,6 +77,19 @@ align-items: center;
 .contact-item{
     display: flex;
     margin-top: 20px;
+    align-items: center;
+}
+
+.contact-number,
+.contact-email {
+    color: inherit; /* Inherit the color from parent element */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.5em;
+}
+
+.contact-number:hover,
+.contact-email:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
 }
 
 .black-font{
@@ -89,7 +99,7 @@ align-items: center;
 /* Styles pour le bouton de fermeture */
 .close-button {
     position: absolute;
-    top: 5px;
+    top: 20px;
     right: 20px;
     font-size: 30px;
     cursor: pointer;
@@ -101,7 +111,7 @@ align-items: center;
 /* carousel */
 .carousel{
     height: 100vh;
-    margin-top: -50px;
+    margin-top: -80px;
     width: 100vw;
     overflow: hidden;
     position: relative;
@@ -135,11 +145,15 @@ align-items: center;
     letter-spacing: 10px;
 }
 .carousel .list .item .title,
-.carousel .list .item .topic{
+.carousel .list .item .topic {
     font-size: 5em;
     font-weight: bold;
     line-height: 1.3em;
+    overflow: hidden; /* Cache le texte qui dépasse */
+    white-space: nowrap; /* Empêche le texte de se plier à la ligne suivante */
+    text-overflow: ellipsis; /* Ajoute les trois petits points */
 }
+
 .carousel .list .item .topic{
     color: #f1683a;
 }
@@ -443,7 +457,18 @@ align-items: center;
     .carousel .list .item .content .title{
         font-size: 30px;
     }
+    .contact-number,
+    .contact-email{
+        font-size: 20px;
+    }
+
+    .contact-logos{
+        width: 30px;
+        height: 30px;
+    }
+
     .contact-infos{
-        font-size: 30px;
+        left: 20%;
+        transform: translateX(-20%);
     }
 }
