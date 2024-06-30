@@ -32,6 +32,7 @@ align-items: center;
     text-shadow: 1px 5px 10px #0004;
     font-weight: bold;
     font-size: 1.2em;
+    transition: ease 2s color;
 }
 /* Styles pour l'overlay */
 .overlay {
@@ -53,7 +54,7 @@ align-items: center;
 }
 
 .contact-infos{
-    color:black;
+    color:#424242;
     position: absolute;
     top: 30%;
     width: 1140px;
@@ -91,8 +92,8 @@ align-items: center;
     text-decoration: underline; /* Optional: Add underline on hover */
 }
 
-.black-font{
-    color: black !important;
+.dark-font{
+    color: #424242!important;
 }
 
 /* Styles pour le bouton de fermeture */
@@ -102,7 +103,7 @@ align-items: center;
     right: 20px;
     font-size: 30px;
     cursor: pointer;
-    color: #000;
+    color: #424242;
     cursor: pointer;
     z-index: 1000;
 }

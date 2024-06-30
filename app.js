@@ -10,6 +10,7 @@ let timeDom = document.querySelector(".carousel .time");
 let overlayDom = document.getElementById("overlay");
 let closeOverlayDom = document.getElementById("closeOverlay");
 let backSolutionsDom = document.getElementById("backSolutions");
+let navLinks = document.querySelectorAll(".nav-link"); // Sélectionner toutes les nav-links
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
@@ -86,19 +87,16 @@ function handleSlideChange() {
   }
 }
 
-// Initial setup: update color for the first active slide
-handleSlideChange();
-
 // Function to fade in the overlay and change z-index
 function fadeInOverlay() {
   overlayDom.classList.add("show");
-  navLinks.forEach((link) => link.classList.add("black-font"));
+  navLinks.forEach((link) => link.classList.add("dark-font"));
 }
 
 // Function to fade out the overlay and reset z-index
 function fadeOutOverlay() {
   overlayDom.classList.remove("show");
-  navLinks.forEach((link) => link.classList.remove("black-font"));
+  navLinks.forEach((link) => link.classList.remove("dark-font"));
 }
 
 // Add event listeners to the contact buttons
