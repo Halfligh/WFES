@@ -160,7 +160,7 @@ align-items: center;
     font-size: 1.2em;
     text-shadow: 0 5px 10px #0004;
     color: #fff; /* Couleur du texte blanc pour un bon contraste */
-    padding: 10px; /* Espacement interne pour éviter que le texte touche les bords du fond */
+    padding: 20px; /* Espacement interne pour éviter que le texte touche les bords du fond */
     border-radius: 10px; /* Bordures arrondies pour un meilleur aspect visuel */
     display: block; /* Change de inline-block à block pour que text-align fonctionne */
     font-weight: 500;
@@ -170,7 +170,7 @@ align-items: center;
 
 .carousel .list .item .des:hover {
     background-color:#eee;; /* Couleur de fond complètement opaque */
-    color: #000; /* Couleur du texte noir */
+    color: #424242; /* Couleur du texte noir */
 }
 
 
