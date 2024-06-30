@@ -29,9 +29,8 @@ align-items: center;
 
 .nav-link{
     margin-right: 40px;
-    transition: color 1s ease; /* Transition de l'opacité */
-    text-shadow: 0 5px 10px #0004;
-    font-weight: 300;
+    text-shadow: 1px 5px 10px #0004;
+    font-weight: bold;
     font-size: 1.2em;
 }
 /* Styles pour l'overlay */
@@ -160,15 +159,12 @@ align-items: center;
 .carousel .list .item .des {
     font-size: 1.2em;
     text-shadow: 0 5px 10px #0004;
-    background-color: rgba(255, 255, 255, 0.42); /* Couleur de fond semi-transparente */
-    border: 1px solid #fff; /* Bordure blanche */
-    backdrop-filter: blur(10px); /* Effet de flou */
-    -webkit-backdrop-filter: blur(10px); /* Effet de flou pour Safari */
     color: #fff; /* Couleur du texte blanc pour un bon contraste */
     padding: 10px; /* Espacement interne pour éviter que le texte touche les bords du fond */
     border-radius: 10px; /* Bordures arrondies pour un meilleur aspect visuel */
-    display: inline-block; /* Assure que le fond ne prenne que l'espace nécessaire */
-    font-weight: 300;
+    display: block; /* Change de inline-block à block pour que text-align fonctionne */
+    font-weight: 500;
+    text-align: justify;
     transition: background-color 0.5s ease, color 0.5s ease; /* Transition douce pour le fond et la couleur du texte */
 }
 

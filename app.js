@@ -10,7 +10,6 @@ let timeDom = document.querySelector(".carousel .time");
 let overlayDom = document.getElementById("overlay");
 let closeOverlayDom = document.getElementById("closeOverlay");
 let backSolutionsDom = document.getElementById("backSolutions");
-let navLinks = document.querySelectorAll(".nav-link"); // Sélectionner toutes les nav-links
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
@@ -57,8 +56,11 @@ function showSlider(type) {
 
   clearTimeout(runNextAuto);
   runNextAuto = setTimeout(() => {
-    next.click();
+    nextDom.click();
   }, timeAutoNext);
+
+  // Update text color based on the new slide
+  handleSlideChange();
 }
 
 // Function to reset the auto-slide timer
@@ -73,6 +75,19 @@ function resetAutoSlideTimer() {
     }, timeAutoNext);
   }
 }
+
+// Function to handle slide change
+function handleSlideChange() {
+  const currentSlide = document.querySelector(".carousel .list .item:first-child img");
+  if (currentSlide.complete) {
+    updateTextColor(currentSlide);
+  } else {
+    currentSlide.addEventListener("load", () => updateTextColor(currentSlide));
+  }
+}
+
+// Initial setup: update color for the first active slide
+handleSlideChange();
 
 // Function to fade in the overlay and change z-index
 function fadeInOverlay() {
