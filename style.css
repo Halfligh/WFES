@@ -193,7 +193,7 @@ align-items: center;
     .contact-container {
       flex-direction: column;
       align-items: center;
-      
+      margin-top: 50px;
     }
   
     .contact-infos,
