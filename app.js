@@ -21,7 +21,6 @@ let timeAutoNext = 30000; // 30 seconds for auto-slide
 
 if (nextDom) {
   nextDom.onclick = function () {
-    console.log("Next button clicked");
     showSlider("next");
     resetAutoSlideTimer();
   };
@@ -29,7 +28,6 @@ if (nextDom) {
 
 if (prevDom) {
   prevDom.onclick = function () {
-    console.log("Previous button clicked");
     showSlider("prev");
     resetAutoSlideTimer();
   };
@@ -40,7 +38,6 @@ let autoSlideExecuted = false; // Flag to check if the auto-slide has been execu
 
 let runNextAuto = setTimeout(() => {
   if (!autoSlideExecuted && nextDom) {
-    console.log("Auto slide executed");
     nextDom.click();
     autoSlideExecuted = true;
   }
@@ -89,27 +86,25 @@ function resetAutoSlideTimer() {
   }
 }
 
-function handleSlideChange() {
-  const currentSlide = document.querySelector(".carousel .list .item:first-child img");
-  if (currentSlide) {
-    if (currentSlide.complete) {
-      updateTextColor(currentSlide);
-    } else {
-      currentSlide.addEventListener("load", () => updateTextColor(currentSlide));
-    }
-  }
-}
+// function handleSlideChange() {
+//   const currentSlide = document.querySelector(".carousel .list .item:first-child img");
+//   if (currentSlide) {
+//     if (currentSlide.complete) {
+//       updateTextColor(currentSlide);
+//     } else {
+//       currentSlide.addEventListener("load", () => updateTextColor(currentSlide));
+//     }
+//   }
+// }
 
 // Function to fade in the overlay and change z-index
 function fadeInOverlay() {
-  console.log("Fade in overlay");
   overlayDom.classList.add("show");
   navLinks.forEach((link) => link.classList.add("dark-font"));
 }
 
 // Function to fade out the overlay and reset z-index
 function fadeOutOverlay() {
-  console.log("Fade out overlay");
   overlayDom.classList.remove("show");
   navLinks.forEach((link) => link.classList.remove("dark-font"));
 }
@@ -118,26 +113,21 @@ function fadeOutOverlay() {
 let contactButtons = document.getElementsByClassName("contactButton");
 for (let i = 0; i < contactButtons.length; i++) {
   contactButtons[i].addEventListener("click", fadeInOverlay);
-  console.log("Added event listener to contact button", contactButtons[i]);
 }
 
 // Add event listener to the element with ID "mention-contact"
 let mentionContactButton = document.getElementById("mention-contact");
 if (mentionContactButton) {
   mentionContactButton.addEventListener("click", function () {
-    alert("ok");
     fadeInOverlay();
   });
-  console.log("Added event listener to mention-contact button");
 }
 
 // Add event listener to the close button
 if (closeOverlayDom) {
   closeOverlayDom.addEventListener("click", fadeOutOverlay);
-  console.log("Added event listener to close button");
 }
 
 if (backSolutionsDom) {
   backSolutionsDom.addEventListener("click", fadeOutOverlay);
-  console.log("Added event listener to back solutions button");
 }
