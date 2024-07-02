@@ -582,4 +582,31 @@ align-items: center;
     .contact-logo{
         margin-top: -80%;
     }
+
+    .carousel .list .item .topic {
+        font-size: 2em;
+    }
+
+    .thumbnail .item {
+        width: 75px;
+        height: 110px;
+        flex-shrink: 0;
+        position: relative;
+        border-radius: 20px; /* Assurez-vous que le dégradé suit les bords arrondis */
+        overflow: hidden; /* Pour s'assurer que le dégradé ne dépasse pas les bords */
+    }
+
+    .thumbnail .item .content .title{
+        font-weight: 500;
+        overflow: hidden; /* Cache le texte qui dépasse */
+        white-space: nowrap; /* Empêche le texte de se plier à la ligne suivante */
+        text-overflow: ellipsis; /* Ajoute les trois petits points */
+      
+    }
+    .thumbnail .item .content .description{
+        font-weight: 300;
+        overflow: hidden; /* Cache le texte qui dépasse */
+        white-space: nowrap; /* Empêche le texte de se plier à la ligne suivante */
+        text-overflow: ellipsis; /* Ajoute les trois petits points */
+    }
 }
