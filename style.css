@@ -564,7 +564,6 @@ align-items: center;
 @media screen and (max-width: 800px) {
     .carousel .list .item .content{
         padding-right: 0;
-        top: 10%;
     }
     .carousel .list .item .content .title{
         font-size: 30px;
