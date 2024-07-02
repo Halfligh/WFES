@@ -86,17 +86,6 @@ function resetAutoSlideTimer() {
   }
 }
 
-// function handleSlideChange() {
-//   const currentSlide = document.querySelector(".carousel .list .item:first-child img");
-//   if (currentSlide) {
-//     if (currentSlide.complete) {
-//       updateTextColor(currentSlide);
-//     } else {
-//       currentSlide.addEventListener("load", () => updateTextColor(currentSlide));
-//     }
-//   }
-// }
-
 // Function to fade in the overlay and change z-index
 function fadeInOverlay() {
   overlayDom.classList.add("show");
@@ -112,7 +101,11 @@ function fadeOutOverlay() {
 // Add event listeners to the contact buttons
 let contactButtons = document.getElementsByClassName("contactButton");
 for (let i = 0; i < contactButtons.length; i++) {
-  contactButtons[i].addEventListener("click", fadeInOverlay);
+  contactButtons[i].addEventListener("click", function () {
+    fadeInOverlay();
+    nav.classList.toggle("show");
+    hamburger.classList.toggle("open");
+  });
 }
 
 // Add event listener to the element with ID "mention-contact"
@@ -131,3 +124,13 @@ if (closeOverlayDom) {
 if (backSolutionsDom) {
   backSolutionsDom.addEventListener("click", fadeOutOverlay);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("show");
+    hamburger.classList.toggle("open");
+  });
+});
