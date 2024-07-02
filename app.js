@@ -3,52 +3,64 @@ let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
 
 let carouselDom = document.querySelector(".carousel");
-let SliderDom = carouselDom.querySelector(".carousel .list");
+let SliderDom = carouselDom ? carouselDom.querySelector(".carousel .list") : null;
 let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+let thumbnailItemsDom = thumbnailBorderDom ? thumbnailBorderDom.querySelectorAll(".item") : [];
 let timeDom = document.querySelector(".carousel .time");
 let overlayDom = document.getElementById("overlay");
 let closeOverlayDom = document.getElementById("closeOverlay");
 let backSolutionsDom = document.getElementById("backSolutions");
-let navLinks = document.querySelectorAll(".nav-link"); // Sélectionner toutes les nav-links
+let navLinks = document.querySelectorAll(".nav-link a, .nav-link p"); // Sélectionner toutes les nav-links
 
-thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+if (thumbnailBorderDom && thumbnailItemsDom.length > 0) {
+  thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+}
+
 let timeRunning = 3000;
 let timeAutoNext = 30000; // 30 seconds for auto-slide
 
-nextDom.onclick = function () {
-  showSlider("next");
-  resetAutoSlideTimer();
-};
+if (nextDom) {
+  nextDom.onclick = function () {
+    console.log("Next button clicked");
+    showSlider("next");
+    resetAutoSlideTimer();
+  };
+}
 
-prevDom.onclick = function () {
-  showSlider("prev");
-  resetAutoSlideTimer();
-};
+if (prevDom) {
+  prevDom.onclick = function () {
+    console.log("Previous button clicked");
+    showSlider("prev");
+    resetAutoSlideTimer();
+  };
+}
 
 let runTimeOut;
 let autoSlideExecuted = false; // Flag to check if the auto-slide has been executed
 
 let runNextAuto = setTimeout(() => {
-  if (!autoSlideExecuted) {
+  if (!autoSlideExecuted && nextDom) {
+    console.log("Auto slide executed");
     nextDom.click();
     autoSlideExecuted = true;
   }
 }, timeAutoNext);
 
 function showSlider(type) {
-  let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
+  console.log("Show slider:", type);
+  let SliderItemsDom = SliderDom ? SliderDom.querySelectorAll(".carousel .list .item") : [];
   let thumbnailItemsDom = document.querySelectorAll(".carousel .thumbnail .item");
 
-  if (type === "next") {
+  if (type === "next" && SliderDom && thumbnailBorderDom) {
     SliderDom.appendChild(SliderItemsDom[0]);
     thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
     carouselDom.classList.add("next");
-  } else {
+  } else if (SliderDom && thumbnailBorderDom) {
     SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
     thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
     carouselDom.classList.add("prev");
   }
+
   clearTimeout(runTimeOut);
   runTimeOut = setTimeout(() => {
     carouselDom.classList.remove("next");
@@ -64,10 +76,10 @@ function showSlider(type) {
   handleSlideChange();
 }
 
-// Function to reset the auto-slide timer
 function resetAutoSlideTimer() {
+  console.log("Reset auto slide timer");
   clearTimeout(runNextAuto);
-  if (!autoSlideExecuted) {
+  if (!autoSlideExecuted && nextDom) {
     runNextAuto = setTimeout(() => {
       if (!autoSlideExecuted) {
         nextDom.click();
@@ -77,24 +89,27 @@ function resetAutoSlideTimer() {
   }
 }
 
-// Function to handle slide change
 function handleSlideChange() {
   const currentSlide = document.querySelector(".carousel .list .item:first-child img");
-  if (currentSlide.complete) {
-    updateTextColor(currentSlide);
-  } else {
-    currentSlide.addEventListener("load", () => updateTextColor(currentSlide));
+  if (currentSlide) {
+    if (currentSlide.complete) {
+      updateTextColor(currentSlide);
+    } else {
+      currentSlide.addEventListener("load", () => updateTextColor(currentSlide));
+    }
   }
 }
 
 // Function to fade in the overlay and change z-index
 function fadeInOverlay() {
+  console.log("Fade in overlay");
   overlayDom.classList.add("show");
   navLinks.forEach((link) => link.classList.add("dark-font"));
 }
 
 // Function to fade out the overlay and reset z-index
 function fadeOutOverlay() {
+  console.log("Fade out overlay");
   overlayDom.classList.remove("show");
   navLinks.forEach((link) => link.classList.remove("dark-font"));
 }
@@ -103,8 +118,26 @@ function fadeOutOverlay() {
 let contactButtons = document.getElementsByClassName("contactButton");
 for (let i = 0; i < contactButtons.length; i++) {
   contactButtons[i].addEventListener("click", fadeInOverlay);
+  console.log("Added event listener to contact button", contactButtons[i]);
+}
+
+// Add event listener to the element with ID "mention-contact"
+let mentionContactButton = document.getElementById("mention-contact");
+if (mentionContactButton) {
+  mentionContactButton.addEventListener("click", function () {
+    alert("ok");
+    fadeInOverlay();
+  });
+  console.log("Added event listener to mention-contact button");
 }
 
 // Add event listener to the close button
-closeOverlayDom.addEventListener("click", fadeOutOverlay);
-backSolutionsDom.addEventListener("click", fadeOutOverlay);
+if (closeOverlayDom) {
+  closeOverlayDom.addEventListener("click", fadeOutOverlay);
+  console.log("Added event listener to close button");
+}
+
+if (backSolutionsDom) {
+  backSolutionsDom.addEventListener("click", fadeOutOverlay);
+  console.log("Added event listener to back solutions button");
+}
