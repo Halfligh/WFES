@@ -103,8 +103,8 @@ let contactButtons = document.getElementsByClassName("contactButton");
 for (let i = 0; i < contactButtons.length; i++) {
   contactButtons[i].addEventListener("click", function () {
     fadeInOverlay();
-    nav.classList.toggle("show");
-    hamburger.classList.toggle("open");
+    nav.classList.remove("show");
+    hamburger.classList.remove("open");
   });
 }
 
